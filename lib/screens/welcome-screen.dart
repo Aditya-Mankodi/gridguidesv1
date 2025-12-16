@@ -35,7 +35,8 @@ class WelcomeScreen extends StatelessWidget {
 					),
 					// dimming overlay for better contrast
 					Container(color: Colors.black.withOpacity(0.35)),
-					SafeArea(
+					
+          SafeArea(
 						child: Column(
 							mainAxisAlignment: MainAxisAlignment.center,
 							children: [
@@ -59,7 +60,8 @@ class WelcomeScreen extends StatelessWidget {
 									),
 
 								const SizedBox(height: 24),
-								const Text(
+								
+                const Text(
 									'Welcome to GridGuides',
 									style: TextStyle(
 										color: Colors.white,
@@ -80,7 +82,8 @@ class WelcomeScreen extends StatelessWidget {
 									child: Column(
 										crossAxisAlignment: CrossAxisAlignment.stretch,
 										children: [
-											ElevatedButton(
+											
+                      ElevatedButton(
 												onPressed: onLogin ?? () {},
 												style: ElevatedButton.styleFrom(
 													padding: const EdgeInsets.symmetric(vertical: 16),
@@ -90,8 +93,10 @@ class WelcomeScreen extends StatelessWidget {
 												),
 												child: const Text('Login / Signup'),
 											),
-											const SizedBox(height: 12),
-											TextButton(
+											
+                      const SizedBox(height: 12),
+											
+                      TextButton(
 												onPressed: onGuest ?? () {},
 												style: TextButton.styleFrom(
 													padding: const EdgeInsets.symmetric(vertical: 16),
@@ -101,9 +106,11 @@ class WelcomeScreen extends StatelessWidget {
 														borderRadius: BorderRadius.circular(8),
 													),
 												),
-												child: const Text('Continue as Guest'),
+											
+                      	child: const Text('Continue as Guest'),
 											),
-											const SizedBox(height: 24),
+											
+                      const SizedBox(height: 24),
 										],
 									),
 								),

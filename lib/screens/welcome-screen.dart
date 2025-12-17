@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'auth-screen.dart';
 
 /// Simple welcome screen with background image, main icon area,
 /// a welcome message, and two action buttons (Login/Signup and Guest).
@@ -83,29 +84,32 @@ class WelcomeScreen extends StatelessWidget {
 										crossAxisAlignment: CrossAxisAlignment.stretch,
 										children: [
 											
-                      ElevatedButton(
-												onPressed: onLogin ?? () {},
-												style: ElevatedButton.styleFrom(
-													padding: const EdgeInsets.symmetric(vertical: 16),
-													shape: RoundedRectangleBorder(
-														borderRadius: BorderRadius.circular(8),
-													),
-												),
-												child: const Text('Login / Signup'),
-											),
+					ElevatedButton(
+					onPressed: onLogin ??
+						() {
+							Navigator.push(
+							context,
+							MaterialPageRoute(
+								builder: (context) => const AuthScreen(),
+							),
+							);
+						},
+					child: const Text('Login / Signup'),
+					),
+
 											
                       const SizedBox(height: 12),
 											
                       TextButton(
-												onPressed: onGuest ?? () {},
-												style: TextButton.styleFrom(
-													padding: const EdgeInsets.symmetric(vertical: 16),
-													backgroundColor: const Color.fromARGB(31, 0, 0, 0),
-                          textStyle: const TextStyle(color: Colors.white),
-													shape: RoundedRectangleBorder(
-														borderRadius: BorderRadius.circular(8),
-													),
-												),
+							onPressed: onGuest ?? () {},
+							style: TextButton.styleFrom(
+							padding: const EdgeInsets.symmetric(vertical: 16),
+							backgroundColor: const Color.fromARGB(31, 0, 0, 0),
+                          	foregroundColor: Colors.white,
+							shape: RoundedRectangleBorder(
+								borderRadius: BorderRadius.circular(8),
+									),
+								),
 											
                       	child: const Text('Continue as Guest'),
 											),

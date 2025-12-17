@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/welcome-screen.dart'; // adjust path if needed
+import 'screens/welcome-screen.dart';
+import 'screens/auth-screen.dart'; // adjust path if needed
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,12 @@ class MyApp extends StatelessWidget {
       title: 'GridGuides',
       home: WelcomeScreen(
         onLogin: () {
-          // TODO: navigate to auth screen
+          							Navigator.push(
+							context,
+							MaterialPageRoute(
+								builder: (context) => const AuthScreen(),
+							),
+							);
         },
         onGuest: () {
           // TODO: navigate to dashboard
